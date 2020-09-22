@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3-5</title>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="calculate()">Tính</button>
+<p id="str"></p><br>
+<p id="result">Tong</p>
+<p id="hienthi"></p>
+<script>
+    function calculate() {
+        let str = "";
+        let a = 0;
+        let b = 1;
+        let i = 0;
+        let result = 0;
+        let n = +document.getElementById('num').value;
+        while (i < n) {
+            result = a + b;
+            a = b;
+            b = result;
+            str += result + ','
+            i++;
+        }
+        document.getElementById('str').innerHTML = str;
+        let total = 0;
+        for(i = 1; i < n; i++) {
+            total = total + result
+            result++;
+        }
+        document.getElementById('result').innerHTML = 'Tong la: ' + total;
+    }
+</script>
+</body>
+</html>
